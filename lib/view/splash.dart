@@ -1,3 +1,4 @@
+import 'package:cryptotrack/view/nav_bar.dart';
 import 'package:flutter/material.dart';
 
 class Splash extends StatefulWidget {
@@ -50,28 +51,36 @@ class _SplashState extends State<Splash> {
             ),
             Padding(
               padding: EdgeInsets.symmetric(horizontal: myWidth * 0.15),
-              child: Container(
-                decoration: BoxDecoration(
-                  color: const Color(0xffFBC700),
-                  borderRadius: BorderRadius.circular(10),
+              child: GestureDetector(
+                onTap: () => Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                    builder: (context) => const NavBar(),
+                  ),
                 ),
-                child: Padding(
-                  padding: EdgeInsets.symmetric(
-                      horizontal: myWidth * 0.05, vertical: myHeight * 0.01),
-                  child: const Row(
-                    mainAxisAlignment: MainAxisAlignment.center,
-                    children: [
-                      Text(
-                        'CREATE PORTFOLIO',
-                        style: TextStyle(
-                          fontSize: 18,
+                child: Container(
+                  decoration: BoxDecoration(
+                    color: const Color(0xffFBC700),
+                    borderRadius: BorderRadius.circular(10),
+                  ),
+                  child: Padding(
+                    padding: EdgeInsets.symmetric(
+                        horizontal: myWidth * 0.05, vertical: myHeight * 0.01),
+                    child: const Row(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: [
+                        Text(
+                          'CREATE PORTFOLIO ',
+                          style: TextStyle(
+                            fontSize: 18,
+                          ),
                         ),
-                      ),
-                      RotationTransition(
-                        turns: AlwaysStoppedAnimation(310 / 360),
-                        child: Icon(Icons.arrow_forward_rounded),
-                      )
-                    ],
+                        RotationTransition(
+                          turns: AlwaysStoppedAnimation(310 / 360),
+                          child: Icon(Icons.arrow_forward_rounded),
+                        )
+                      ],
+                    ),
                   ),
                 ),
               ),
